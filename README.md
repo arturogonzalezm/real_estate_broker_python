@@ -6,28 +6,70 @@
 
 # Real Estate Broker - HackerRank Challenge
 
-You are a real estate broker in ancient Knossos. 
-You have several unsold houses, and each house has an area and a minimum price. 
-You also have several clients, and each client wants a house with an area greater than a specified value and at a price less than or equal to a specified maximum.
+## Overview
+This module provides an implementation for solving the real estate broker problem using a maximum bipartite matching algorithm. It matches clients with houses based on specified requirements, such as required area and maximum price.
 
-Each client can buy at most one house, and each house can have at most one owner. The challenge is to determine the maximum number of houses you can sell.
+## Functions
 
-## Input Format
+### `bfs(graph, match, dist, n)`
+Performs a Breadth-First Search (BFS) to update distances to the nearest unmatched vertex in a bipartite graph. This function is critical for identifying augmenting paths which can increase the overall matching.
 
-The first line contains two space-separated integers describing the respective values of \(n\) (the number of clients) and \(m\) (the number of houses).
+- **Parameters**:
+    - `graph (defaultdict)`: The graph representing connections between nodes (clients and houses).
+    - `match (dict)`: Current matching status of nodes.
+    - `dist (dict)`: Distances to the nearest unmatched node.
+    - `n (int)`: Number of nodes in the first partition (clients).
 
-Each line \(i\) of the \(n\) subsequent lines contains two space-separated integers describing the respective values of area \(a_i\) and price \(p_i\) for client \(i\).
+- **Returns**:
+    - `bool`: True if an augmenting path is found, otherwise False.
 
-Each line \(j\) of the \(m\) subsequent lines contains two space-separated integers describing the respective values of area \(a_j\) and price \(p_j\) for house \(j\).
+### `dfs(graph, match, dist, v)`
+Performs a Depth-First Search (DFS) to find and augment paths in the bipartite graph, improving the matching result.
 
-## Constraints
+- **Parameters**:
+    - `graph (defaultdict)`: The graph representing connections between nodes.
+    - `match (dict)`: Current matching in the bipartite graph.
+    - `dist (dict)`: Distance to the nearest unmatched node.
+    - `v (int)`: Current node being visited.
 
-- $$\(1 \leq n, m \leq 1000\)$$
-- $$\(1 \leq a_i, p_i, a_j, p_j \leq 1000\)$$
+- **Returns**:
+    - `bool`: True if an augmenting path is found starting from node v, otherwise False.
 
-## Output Format
+### `max_bipartite_matching(graph, n)`
+Calculates the maximum bipartite matching in the graph, representing the optimal pairing of clients to houses.
 
-Print a single integer denoting the maximum number of houses you can sell.
+- **Parameters**:
+    - `graph (defaultdict)`: The graph representing connections between clients and houses.
+    - `n (int)`: Number of clients.
+
+- **Returns**:
+    - `int`: Maximum number of matched clients to suitable houses.
+
+### `real_estate_broker(clients, houses)`
+High-level function that integrates all other functions to solve the real estate broker problem by matching clients to houses based on their requirements.
+
+- **Parameters**:
+    - `clients (list)`: List of tuples containing each client's required area and maximum price.
+    - `houses (list)`: List of tuples detailing each house's area and price.
+
+- **Returns**:
+    - `int`: The maximum number of clients that can be matched to suitable houses.
+
+## Example Usage
+The module can be used as follows in a Python script:
+
+```python
+from real_estate_broker_module import real_estate_broker
+```
+
+# Define clients and houses
+clients = [(1200, 300000), (800, 200000)]
+houses = [(1000, 250000), (1500, 350000)]
+
+# Compute the matches
+matches = real_estate_broker(clients, houses)
+print("Number of matches:", matches)
+
 
 ## Sample Input 0
 
