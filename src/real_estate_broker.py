@@ -96,12 +96,12 @@ def real_estate_broker(clients, houses):
     Returns:
     int: The maximum number of clients that can be matched to suitable houses.
     """
-    n = len(clients)  # number of clients
-    m = len(houses)  # number of houses
+    n = len(clients)
     graph = defaultdict(list)
     for i, (req_area, max_price) in enumerate(clients, 1):
         for j, (area, price) in enumerate(houses, 1):
             if area > req_area and price <= max_price:
-                graph[i].append(j + n)  # Offset house indices by n to separate client and house indices
-
+                graph[i].append(j + n)  # Offset by n to separate indices
+    # Debug print to check graph structure
+    # print("Graph:", dict(graph))
     return max_bipartite_matching(graph, n)
