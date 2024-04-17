@@ -62,15 +62,15 @@ The module can be used as follows in a Python script:
 from src.real_estate_broker import real_estate_broker
 ```
 
-# Define clients and houses
+## Define clients and houses
 clients = [(1200, 300000), (800, 200000)]
 houses = [(1000, 250000), (1500, 350000)]
 
-# Compute the matches
+## Compute the matches
 matches = real_estate_broker(clients, houses)
 print("Number of matches:", matches)
 
-## Real Estate Broker Solution Diagram
+## Solution Diagram
 
 ```mermaid
 flowchart TD
