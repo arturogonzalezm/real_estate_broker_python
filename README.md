@@ -22,8 +22,8 @@ Each line \(j\) of the \(m\) subsequent lines contains two space-separated integ
 
 ## Constraints
 
-- \(1 \leq n, m \leq 1000\)
-- \(1 \leq a_i, p_i, a_j, p_j \leq 1000\)
+- $$\(1 \leq n, m \leq 1000\)$$
+- $$\(1 \leq a_i, p_i, a_j, p_j \leq 1000\)$$
 
 ## Output Format
 
