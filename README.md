@@ -6,8 +6,9 @@
 
 # Real Estate Broker - HackerRank Challenge
 
-## Problem Statement
-You are a real estate broker in ancient Knossos. You have several unsold houses, and each house has an area and a minimum price. You also have several clients, and each client wants a house with an area greater than a specified value and at a price less than or equal to a specified maximum.
+You are a real estate broker in ancient Knossos. 
+You have several unsold houses, and each house has an area and a minimum price. 
+You also have several clients, and each client wants a house with an area greater than a specified value and at a price less than or equal to a specified maximum.
 
 Each client can buy at most one house, and each house can have at most one owner. The challenge is to determine the maximum number of houses you can sell.
 
