@@ -59,7 +59,7 @@ High-level function that integrates all other functions to solve the real estate
 The module can be used as follows in a Python script:
 
 ```python
-from real_estate_broker_module import real_estate_broker
+from src.real_estate_broker import real_estate_broker
 ```
 
 # Define clients and houses
