@@ -30,21 +30,21 @@ Print a single integer denoting the maximum number of houses you can sell.
 
 ## Sample Input 0
 
-    ```
-    3 3
-    5 110
-    9 500
-    20 400
-    10 100
-    2 200
-    30 300
-    ```
+```
+3 3
+5 110
+9 500
+20 400
+10 100
+2 200
+30 300
+```
 
 ## Sample Output 0
 
-    ```
-    2
-    ```
+```
+2
+```
 
 
 ## Explanation
