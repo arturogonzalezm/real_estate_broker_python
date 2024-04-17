@@ -70,6 +70,29 @@ houses = [(1000, 250000), (1500, 350000)]
 matches = real_estate_broker(clients, houses)
 print("Number of matches:", matches)
 
+## Real Estate Broker Solution Diagram
+
+```mermaid
+lowchart TD
+A[Start] --> B[Input Client and House Data]
+B --> C{real_estate_broker}
+C -->|Create Graph| D[max_bipartite_matching]
+C -->|Prepare Data| E[Construct Graph]
+E --> D
+D --> F{bfs}
+F -->|Augmenting Path Exists?| G[Yes]
+F -->|No| H[No More Matches]
+G --> I[dfs]
+I -->|Find Path?| J[Update Matches]
+J --> F
+H --> K[Output Matches]
+K --> L[End]
+
+    click C "Callback to real_estate_broker function"
+    click D "Callback to max_bipartite_matching function"
+    click F "Callback to bfs function"
+    click I "Callback to dfs function"
+```
 
 ## Sample Input 0
 
