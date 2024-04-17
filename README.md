@@ -6,7 +6,6 @@
 
 # Real Estate Broker - HackerRank Challenge
 
-## Overview
 This module provides an implementation for solving the real estate broker problem using a maximum bipartite matching algorithm. It matches clients with houses based on specified requirements, such as required area and maximum price.
 
 ## Functions
